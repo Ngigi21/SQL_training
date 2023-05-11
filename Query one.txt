@@ -1,0 +1,10 @@
+
+
+Query
+1.Display a single relation with: OrderId, OrderDate, CustomerName, City, Address, PostalCode, ShipperName, ProductName, Quantity.
+SELECT O.orderid, O.OrderDate,C.customerName,C.City,C.Address,C.PostalCode,S.ShippersName,P.ProductName,OD.Quantity *FROM customers as c
+join Orders as O on O.CustomersId=C.CustomerId
+join Shippers as S on S.ShipperId=O.ShippersId
+join OrderDeatils as OD on OD.OrderId=O.OrderId
+join products as P on OD.ProductID=P.ProductId; 
+
